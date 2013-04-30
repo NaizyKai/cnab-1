@@ -9,7 +9,6 @@ import java.util.List;
 import org.apache.commons.io.Charsets;
 
 import com.devmonsters.cnab.Banco;
-import com.devmonsters.cnab.CnabFactory;
 import com.devmonsters.cnab.arquivoretorno.header.Header;
 import com.devmonsters.cnab.arquivoretorno.registro.Registro;
 import com.devmonsters.cnab.arquivoretorno.trailer.Trailer;
@@ -24,11 +23,11 @@ public class Leitor {
             String linha = null;
             while ((linha = br.readLine()) != null) {
                 if (linha.startsWith("0")) {
-                    this.header = new CnabFactory().getInstanceHeader(banco, linha);
+                    this.header = banco.getHeader(linha);
                 } else if (linha.startsWith("1")) {
-                    this.registros.add(new CnabFactory().getInstanceRegistro(banco, linha));
+                    this.registros.add(banco.getRegistro(linha));
                 } else {
-                    this.trailer = new CnabFactory().getInstanceTrailer(banco, linha);
+                    this.trailer = banco.getTrailer(linha);
                 }
             }
         }
