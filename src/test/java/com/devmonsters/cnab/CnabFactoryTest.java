@@ -13,32 +13,32 @@ import com.devmonsters.cnab.arquivoretorno.trailer.TrailerCaixa;
 public class CnabFactoryTest {
 
     @Test
-    public void headerCef() {
+    public void headerCef() throws Exception {
         Assert.assertTrue(new CnabFactory().getInstanceHeader(Banco.CEF, "0LINHA") instanceof HeaderCaixa);
     }
 
     @Test
-    public void headerBradesco() {
+    public void headerBradesco() throws Exception {
         Assert.assertTrue(new CnabFactory().getInstanceHeader(Banco.BRADESCO, "0LINHA") instanceof HeaderBradesco);
     }
 
     @Test
-    public void registroCef() {
+    public void registroCef() throws Exception {
         Assert.assertTrue(new CnabFactory().getInstanceRegistro(Banco.CEF, "1LINHA") instanceof RegistroCaixa);
     }
 
     @Test
-    public void registroBradesco() {
+    public void registroBradesco() throws Exception {
         Assert.assertTrue(new CnabFactory().getInstanceRegistro(Banco.BRADESCO, "1LINHA") instanceof RegistroBradesco);
     }
 
     @Test
-    public void trailerCef() {
+    public void trailerCef() throws Exception {
         Assert.assertTrue(new CnabFactory().getInstanceTrailer(Banco.CEF, "9LINHA") instanceof TrailerCaixa);
     }
 
     @Test
-    public void trailerBradesco() {
+    public void trailerBradesco() throws Exception {
         Assert.assertTrue(new CnabFactory().getInstanceTrailer(Banco.BRADESCO, "9LINHA") instanceof TrailerBradesco);
     }
 }

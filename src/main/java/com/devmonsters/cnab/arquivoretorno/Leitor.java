@@ -1,7 +1,6 @@
 package com.devmonsters.cnab.arquivoretorno;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ public class Leitor {
     private Trailer trailer;
     private final List<Registro> registros = new ArrayList<>();
 
-    public Leitor(final InputStream is, final Banco banco) throws IOException {
+    public Leitor(final InputStream is, final Banco banco) throws Exception {
         try (InputStreamReader isr = new InputStreamReader(is, Charsets.UTF_8); BufferedReader br = new BufferedReader(isr)) {
             String linha = null;
             while ((linha = br.readLine()) != null) {
