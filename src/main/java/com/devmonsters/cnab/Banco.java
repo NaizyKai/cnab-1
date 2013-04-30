@@ -2,22 +2,22 @@ package com.devmonsters.cnab;
 
 public enum Banco {
 
-    CEF(104),
-    BRADESCO(237);
+    CEF("104"),
+    BRADESCO("237");
 
-    private final int codigo;
+    private final String codigo;
 
-    private Banco(final int codigo) {
+    private Banco(final String codigo) {
         this.codigo = codigo;
     }
 
-    public int getCodigo() {
+    public String getCodigo() {
         return this.codigo;
     }
 
-    public static Banco valueOfCodigo(final int codigoBanco) {
+    public static Banco valueOfCodigo(final String codigoBanco) {
         for (final Banco banco : Banco.values()) {
-            if (codigoBanco == banco.getCodigo()) {
+            if (codigoBanco.equals(banco.getCodigo())) {
                 return banco;
             }
         }

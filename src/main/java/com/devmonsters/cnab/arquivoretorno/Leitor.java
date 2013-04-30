@@ -25,11 +25,11 @@ public class Leitor {
             String linha = null;
             while ((linha = br.readLine()) != null) {
                 if (linha.startsWith("0")) {
-                    this.header = CnabFactory.getInstanceHeader(banco, linha);
+                    this.header = new CnabFactory().getInstanceHeader(banco, linha);
                 } else if (linha.startsWith("1")) {
-                    this.registros.add(CnabFactory.getInstanceRegistro(banco, linha));
+                    this.registros.add(new CnabFactory().getInstanceRegistro(banco, linha));
                 } else {
-                    this.trailer = CnabFactory.getInstanceTrailer(banco, linha);
+                    this.trailer = new CnabFactory().getInstanceTrailer(banco, linha);
                 }
             }
         }

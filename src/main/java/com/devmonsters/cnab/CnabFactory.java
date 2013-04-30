@@ -10,9 +10,9 @@ import com.devmonsters.cnab.arquivoretorno.trailer.Trailer;
 import com.devmonsters.cnab.arquivoretorno.trailer.TrailerBradesco;
 import com.devmonsters.cnab.arquivoretorno.trailer.TrailerCaixa;
 
-public abstract class CnabFactory {
+public class CnabFactory {
 
-    public static Header getInstanceHeader(final Banco banco, final String linha) {
+    public Header getInstanceHeader(final Banco banco, final String linha) {
         switch (banco) {
             case CEF:
                 return new HeaderCaixa(linha);
@@ -23,7 +23,7 @@ public abstract class CnabFactory {
         }
     }
 
-    public static Registro getInstanceRegistro(final Banco banco, final String linha) {
+    public Registro getInstanceRegistro(final Banco banco, final String linha) {
         switch (banco) {
             case CEF:
                 return new RegistroCaixa(linha);
@@ -34,7 +34,7 @@ public abstract class CnabFactory {
         }
     }
 
-    public static Trailer getInstanceTrailer(final Banco banco, final String linha) {
+    public Trailer getInstanceTrailer(final Banco banco, final String linha) {
         switch (banco) {
             case CEF:
                 return new TrailerCaixa(linha);
