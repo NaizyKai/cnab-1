@@ -16,6 +16,11 @@ public class FormaPagamentoTest {
     }
 
     @Test
+    public void chequePeloNome() {
+        Assert.assertEquals(FormaPagamento.CHEQUE, FormaPagamento.valueOf("CHEQUE"));
+    }
+
+    @Test
     public void codigoInvalidoRetornaNulo() {
         Assert.assertNull(FormaPagamento.valueOfCodigo(3));
     }

@@ -16,6 +16,11 @@ public class InscricaoDaEmpresaTest {
     }
 
     @Test
+    public void pisPeloNome() {
+        Assert.assertEquals(InscricaoDaEmpresa.PIS, InscricaoDaEmpresa.valueOf("PIS"));
+    }
+
+    @Test
     public void codigoInvalidoRetornaNulo() {
         Assert.assertNull(InscricaoDaEmpresa.valueOfCodigo("04"));
     }
