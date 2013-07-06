@@ -3,5 +3,5 @@
 .settings/
 target/
 .idea/
-cnab.iml
+*.iml
 .DS_Store
