@@ -95,6 +95,10 @@ public abstract class Registro {
         return new BigDecimal(this.getLinha().substring(175, 188)).divide(new BigDecimal(100));
     }
 
+    public String getLocalDePagamento() {
+        return this.getLinha().substring(188, 191);
+    }
+
     public BigDecimal getIof() {
         return new BigDecimal(this.getLinha().substring(214, 227)).divide(new BigDecimal(100));
     }
