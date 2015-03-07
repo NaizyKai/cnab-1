@@ -1,4 +1,5 @@
 ###CNAB
+===
 [![Build Status](https://api.travis-ci.org/devmonsters/cnab.png)](http://travis-ci.org/#!/devmonsters/cnab)
 
 Este projeto visa disponibilizar classes para representação e leitura/escrita de arquivos no formato Febraban CNAB (240/400).
