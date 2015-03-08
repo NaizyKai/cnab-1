@@ -12,4 +12,9 @@ public class Arquivo5LoteTrailer extends ArquivoLinha {
     int getTipo() {
         return 5;
     }
+
+    @Override
+    String getLinha() {
+        return null;
+    }
 }

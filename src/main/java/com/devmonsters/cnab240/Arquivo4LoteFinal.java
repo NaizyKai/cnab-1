@@ -12,4 +12,9 @@ public class Arquivo4LoteFinal extends ArquivoLinha {
     int getTipo() {
         return 4;
     }
+
+    @Override
+    String getLinha() {
+        return null;
+    }
 }

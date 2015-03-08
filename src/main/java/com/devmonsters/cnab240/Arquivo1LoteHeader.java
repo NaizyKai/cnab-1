@@ -12,4 +12,9 @@ public class Arquivo1LoteHeader extends ArquivoLinha {
     int getTipo() {
         return 1;
     }
+
+    @Override
+    String getLinha() {
+        return null;
+    }
 }

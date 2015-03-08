@@ -12,4 +12,9 @@ public class Arquivo9Trailer extends ArquivoLinha {
     int getTipo() {
         return 9;
     }
+
+    @Override
+    String getLinha() {
+        return null;
+    }
 }

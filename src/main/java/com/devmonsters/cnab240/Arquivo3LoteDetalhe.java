@@ -12,4 +12,9 @@ public class Arquivo3LoteDetalhe extends ArquivoLinha {
     int getTipo() {
         return 3;
     }
+
+    @Override
+    String getLinha() {
+        return null;
+    }
 }

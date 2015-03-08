@@ -46,4 +46,11 @@ public class Arquivo0HeaderTest {
         Assert.assertEquals("xxxxxxxxxxxxxxxxxxxx", header.getCampo23ReservadoEmpresa());
         Assert.assertEquals("yyyyyyyyyyyyyyyyyyyyyyyyyyyyy", header.getCampo24Reservado3());
     }
+
+    @Test
+    public void aPartirDeUmaLinhaOArquivoDeveSeRecompor() {
+        Arquivo0Header header = new Arquivo0Header(LINHA_TESTE_VALIDA);
+        Assert.assertEquals(LINHA_TESTE_VALIDA, header.getLinha());
+        Assert.assertEquals(LINHA_TESTE_VALIDA, header.toString());
+    }
 }

@@ -6,8 +6,13 @@ abstract class ArquivoLinha implements Serializable {
 
     private static final long serialVersionUID = -5643739698394352808L;
     private static final int TAMANHO_PADRAO_LINHA = 241;
-    private final String linha;
 
+    /**
+     * Construtor que recebe uma linha para o objeto.<br>
+     * O mesmo valida que a linha n\u00e3o seja nula, e que setisfa\u00e7a o tamanho e o tipo requerido.
+     *
+     * @param linha Linha do objeto.
+     */
     public ArquivoLinha(final String linha) {
         if (linha == null) {
             throw new IllegalArgumentException("A linha n\u00e3o pode ser nula");
@@ -18,16 +23,6 @@ abstract class ArquivoLinha implements Serializable {
         if (!linha.startsWith(String.valueOf(getTipo()))) {
             throw new IllegalArgumentException(String.format("A linha n\u00e3o satisfaz o tipo esperado %s: %s", getTipo(), linha));
         }
-        this.linha = linha;
-    }
-
-    /**
-     * Retorna a linha a qual este objeto representa, sem manipulacao.
-     *
-     * @return linha completa.
-     */
-    public String getLinha() {
-        return linha;
     }
 
     /**
@@ -36,6 +31,13 @@ abstract class ArquivoLinha implements Serializable {
      * @return tipo de registro.
      */
     abstract int getTipo();
+
+    /**
+     * Representa a linha do arquivo.
+     *
+     * @return linha do arquivo.
+     */
+    abstract String getLinha();
 
     @Override
     public boolean equals(Object obj) {
@@ -46,16 +48,16 @@ abstract class ArquivoLinha implements Serializable {
             return false;
         }
         final ArquivoLinha that = (ArquivoLinha) obj;
-        return this.linha.equals(that.linha);
+        return this.getLinha().equals(that.getLinha());
     }
 
     @Override
     public int hashCode() {
-        return linha.hashCode();
+        return this.getLinha().hashCode();
     }
 
     @Override
     public String toString() {
-        return this.linha;
+        return this.getLinha().toString();
     }
 }

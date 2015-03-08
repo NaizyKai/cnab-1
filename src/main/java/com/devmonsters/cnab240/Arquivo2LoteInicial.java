@@ -12,4 +12,9 @@ public class Arquivo2LoteInicial extends ArquivoLinha {
     int getTipo() {
         return 2;
     }
+
+    @Override
+    String getLinha() {
+        return null;
+    }
 }
