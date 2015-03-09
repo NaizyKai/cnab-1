@@ -1,31 +1,32 @@
-package com.devmonsters.cnab240;
+package com.devmonsters.cnab240.bancos.caixa;
 
+import com.devmonsters.cnab240.Arquivo9Trailer;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Arquivo9TrailerTest {
+public class Arquivo9TrailerCaixaTest {
 
     private final String LINHA_TESTE_VALIDA = "9aaabbbbcdddddddddeeeeeeffffffgggggghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh";
     private final String LINHA_TESTE_INVALIDA_TIPO = LINHA_TESTE_VALIDA.replace("9", "1");
 
     @Test(expected = IllegalArgumentException.class)
     public void erroAoConstruirComNulo() {
-        new Arquivo9Trailer(null);
+        new Arquivo9TrailerCaixa(null);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void erroAoConstruirComTamanhoInvalido() {
-        new Arquivo9Trailer(LINHA_TESTE_VALIDA.substring(0, 240));
+        new Arquivo9TrailerCaixa(LINHA_TESTE_VALIDA.substring(0, 240));
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void erroAoConstruirComTipoIncorreto() {
-        new Arquivo9Trailer(LINHA_TESTE_INVALIDA_TIPO);
+        new Arquivo9TrailerCaixa(LINHA_TESTE_INVALIDA_TIPO);
     }
 
     @Test
     public void retornandoCamposCorretamente() {
-        final Arquivo9Trailer trailer = new Arquivo9Trailer(LINHA_TESTE_VALIDA);
+        final Arquivo9TrailerCaixa trailer = new Arquivo9TrailerCaixa(LINHA_TESTE_VALIDA);
         Assert.assertEquals("aaa", trailer.getCampo01ControleBanco());
         Assert.assertEquals("bbbb", trailer.getCampo02ControleLote());
         Assert.assertEquals("c", trailer.getCampo03ControleRegistro());
@@ -38,7 +39,7 @@ public class Arquivo9TrailerTest {
 
     @Test
     public void aPartirDeUmaLinhaOArquivoDeveSeRecompor() {
-        Arquivo9Trailer trailer = new Arquivo9Trailer(LINHA_TESTE_VALIDA);
+        Arquivo9Trailer trailer = new Arquivo9TrailerCaixa(LINHA_TESTE_VALIDA);
         Assert.assertEquals(LINHA_TESTE_VALIDA, trailer.getLinha());
         Assert.assertEquals(LINHA_TESTE_VALIDA, trailer.toString());
     }

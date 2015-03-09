@@ -1,6 +1,6 @@
 package com.devmonsters.cnab240;
 
-public class Arquivo2LoteInicial extends ArquivoLinha {
+public abstract class Arquivo2LoteInicial extends ArquivoLinha {
 
     private static final long serialVersionUID = -1966821905438067062L;
 
@@ -9,12 +9,7 @@ public class Arquivo2LoteInicial extends ArquivoLinha {
     }
 
     @Override
-    int getTipo() {
+    public final int getTipo() {
         return 2;
-    }
-
-    @Override
-    String getLinha() {
-        return null;
     }
 }

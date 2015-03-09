@@ -30,14 +30,14 @@ abstract class ArquivoLinha implements Serializable {
      *
      * @return tipo de registro.
      */
-    abstract int getTipo();
+    public abstract int getTipo();
 
     /**
      * Representa a linha do arquivo.
      *
      * @return linha do arquivo.
      */
-    abstract String getLinha();
+    public abstract String getLinha();
 
     @Override
     public boolean equals(Object obj) {

@@ -1,31 +1,32 @@
-package com.devmonsters.cnab240;
+package com.devmonsters.cnab240.bancos.caixa;
 
+import com.devmonsters.cnab240.Arquivo0Header;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Arquivo0HeaderTest {
+public class Arquivo0HeaderCaixaTest {
 
     private final String LINHA_TESTE_VALIDA = "0aaabbbbcdddddddddeffffffffffffffgggggggggggggggggggghhhhhijjjjjjjjjjjjklmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnoooooooooopqqqqqqqqrrrrrrsssssstttuuuuuvvvvvvvvvvvvvvvvvvvvxxxxxxxxxxxxxxxxxxxxyyyyyyyyyyyyyyyyyyyyyyyyyyyyy";
     private final String LINHA_TESTE_INVALIDA_TIPO = LINHA_TESTE_VALIDA.replace("0", "1");
 
     @Test(expected = IllegalArgumentException.class)
     public void erroAoConstruirComNulo() {
-        new Arquivo0Header(null);
+        new Arquivo0HeaderCaixa(null);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void erroAoConstruirComTamanhoInvalido() {
-        new Arquivo0Header(LINHA_TESTE_VALIDA.substring(0, 240));
+        new Arquivo0HeaderCaixa(LINHA_TESTE_VALIDA.substring(0, 240));
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void erroAoConstruirComTipoIncorreto() {
-        new Arquivo0Header(LINHA_TESTE_INVALIDA_TIPO);
+        new Arquivo0HeaderCaixa(LINHA_TESTE_INVALIDA_TIPO);
     }
 
     @Test
     public void retornandoCamposCorretamente() {
-        final Arquivo0Header header = new Arquivo0Header(LINHA_TESTE_VALIDA);
+        final Arquivo0HeaderCaixa header = new Arquivo0HeaderCaixa(LINHA_TESTE_VALIDA);
         Assert.assertEquals("aaa", header.getCampo01ControleBanco());
         Assert.assertEquals("bbbb", header.getCampo02ControleLote());
         Assert.assertEquals("c", header.getCampo03ControleRegistro());
@@ -54,7 +55,7 @@ public class Arquivo0HeaderTest {
 
     @Test
     public void aPartirDeUmaLinhaOArquivoDeveSeRecompor() {
-        Arquivo0Header header = new Arquivo0Header(LINHA_TESTE_VALIDA);
+        Arquivo0Header header = new Arquivo0HeaderCaixa(LINHA_TESTE_VALIDA);
         Assert.assertEquals(LINHA_TESTE_VALIDA, header.getLinha());
         Assert.assertEquals(LINHA_TESTE_VALIDA, header.toString());
     }
