@@ -258,27 +258,27 @@ public class Arquivo0Header extends ArquivoLinha {
     @Override
     public String getLinha() {
         final StringBuilder linha = new StringBuilder(String.valueOf(this.getTipo()));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo01ControleBanco), 3, ' '));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo01ControleBanco), 3, '0'));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo02ControleLote), 4, '0'));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo03ControleRegistro), 1, '0'));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo04Reservado1), 9, ' '));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo05EmpresaInscricaoTipo), 1, '0'));
-        linha.append(Strings.isNullOrEmpty(this.campo06EmpresaInscricaoNumero) ? "00000000000000" : Strings.padStart(this.campo06EmpresaInscricaoNumero, 14, ' '));
+        linha.append(Strings.isNullOrEmpty(this.campo06EmpresaInscricaoNumero) ? "00000000000000" : Strings.padStart(this.campo06EmpresaInscricaoNumero, 14, '0'));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo07EmpresaConvenio), 20, ' '));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo08EmpresaContaCorrenteAgenciaCodigo), 5, ' '));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo08EmpresaContaCorrenteAgenciaCodigo), 5, '0'));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo09EmpresaContaCorrenteAgenciaDV), 1, ' '));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo10EmpresaContaCorrenteContaNumero), 12, ' '));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo10EmpresaContaCorrenteContaNumero), 12, '0'));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo11EmpresaContaCorrenteContaDV), 1, ' '));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo12EmpresaContaCorrenteDV), 1, ' '));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo13EmpresaNome), 30, ' '));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo14NomeBanco), 30, ' '));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo15Reservado2), 10, ' '));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo16ArquivoCodigo), 1, ' '));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo17ArquivoDataGeracao), 8, ' '));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo18ArquivoHoraGeracao), 6, ' '));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo19ArquivoSequencia), 6, ' '));
-        linha.append(Strings.isNullOrEmpty(this.campo20ArquivoLayout) ? String.format("%s%s", Arquivo.ARQUIVO_VERSAO, Arquivo.ARQUIVO_RELEASE) : Strings.padStart(this.campo20ArquivoLayout, 3, ' '));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo21ArquivoDensidade), 5, ' '));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo16ArquivoCodigo), 1, '0'));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo17ArquivoDataGeracao), 8, '0'));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo18ArquivoHoraGeracao), 6, '0'));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo19ArquivoSequencia), 6, '0'));
+        linha.append(Strings.isNullOrEmpty(this.campo20ArquivoLayout) ? String.format("%s%s", Arquivo.ARQUIVO_VERSAO, Arquivo.ARQUIVO_RELEASE) : Strings.padStart(this.campo20ArquivoLayout, 3, '0'));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo21ArquivoDensidade), 5, '0'));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo22ReservadoBanco), 20, ' '));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo23ReservadoEmpresa), 20, ' '));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo24Reservado3), 29, ' '));

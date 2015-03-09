@@ -1,11 +1,93 @@
 package com.devmonsters.cnab240;
 
+import com.google.common.base.Strings;
+
 public class Arquivo9Trailer extends ArquivoLinha {
 
     private static final long serialVersionUID = 6870217246794836499L;
+    private String campo01ControleBanco;
+    private String campo02ControleLote;
+    private String campo03ControleRegistro;
+    private String campo04Reservado1;
+    private String campo05TotaisQuantidadeLotes;
+    private String campo06TotaisQuantidadeRegistros;
+    private String campo07TotaisQuantidadeContasConciliacao;
+    private String campo08Reservado2;
 
     public Arquivo9Trailer(String linha) {
         super(linha);
+        this.campo01ControleBanco = linha.substring(1, 4);
+        this.campo02ControleLote = linha.substring(4, 8);
+        this.campo03ControleRegistro = linha.substring(8, 9);
+        this.campo04Reservado1 = linha.substring(9, 18);
+        this.campo05TotaisQuantidadeLotes = linha.substring(18, 24);
+        this.campo06TotaisQuantidadeRegistros = linha.substring(24, 30);
+        this.campo07TotaisQuantidadeContasConciliacao = linha.substring(30, 36);
+        this.campo08Reservado2 = linha.substring(36, 241);
+    }
+
+    public String getCampo01ControleBanco() {
+        return campo01ControleBanco;
+    }
+
+    public void setCampo01ControleBanco(String campo01ControleBanco) {
+        this.campo01ControleBanco = campo01ControleBanco;
+    }
+
+    public String getCampo02ControleLote() {
+        return campo02ControleLote;
+    }
+
+    public void setCampo02ControleLote(String campo02ControleLote) {
+        this.campo02ControleLote = campo02ControleLote;
+    }
+
+    public String getCampo03ControleRegistro() {
+        return campo03ControleRegistro;
+    }
+
+    public void setCampo03ControleRegistro(String campo03ControleRegistro) {
+        this.campo03ControleRegistro = campo03ControleRegistro;
+    }
+
+    public String getCampo04Reservado1() {
+        return campo04Reservado1;
+    }
+
+    public void setCampo04Reservado1(String campo04Reservado1) {
+        this.campo04Reservado1 = campo04Reservado1;
+    }
+
+    public String getCampo05TotaisQuantidadeLotes() {
+        return campo05TotaisQuantidadeLotes;
+    }
+
+    public void setCampo05TotaisQuantidadeLotes(String campo05TotaisQuantidadeLotes) {
+        this.campo05TotaisQuantidadeLotes = campo05TotaisQuantidadeLotes;
+    }
+
+    public String getCampo06TotaisQuantidadeRegistros() {
+        return campo06TotaisQuantidadeRegistros;
+    }
+
+    public void setCampo06TotaisQuantidadeRegistros(String campo06TotaisQuantidadeRegistros) {
+        this.campo06TotaisQuantidadeRegistros = campo06TotaisQuantidadeRegistros;
+    }
+
+    public String getCampo07TotaisQuantidadeContasConciliacao() {
+        return campo07TotaisQuantidadeContasConciliacao;
+    }
+
+    public void setCampo07TotaisQuantidadeContasConciliacao(String campo07TotaisQuantidadeContasConciliacao) {
+        this.campo07TotaisQuantidadeContasConciliacao = campo07TotaisQuantidadeContasConciliacao;
+    }
+
+    public String getCampo08Reservado2() {
+        return campo08Reservado2;
+    }
+
+    public void setCampo08Reservado2(String campo08Reservado2) {
+        this.campo08Reservado2 = campo08Reservado2;
     }
 
     @Override
@@ -15,6 +97,15 @@ public class Arquivo9Trailer extends ArquivoLinha {
 
     @Override
     String getLinha() {
-        return null;
+        final StringBuilder linha = new StringBuilder(String.valueOf(this.getTipo()));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo01ControleBanco), 3, '0'));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo02ControleLote), 4, '0'));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo03ControleRegistro), 1, '0'));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo04Reservado1), 9, ' '));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo05TotaisQuantidadeLotes), 6, '0'));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo06TotaisQuantidadeRegistros), 6, '0'));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo07TotaisQuantidadeContasConciliacao), 6, '0'));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo08Reservado2), 205, ' '));
+        return linha.toString();
     }
 }
