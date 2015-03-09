@@ -14,6 +14,11 @@ public class Arquivo0HeaderTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
+    public void erroAoConstruirComTamanhoInvalido() {
+        new Arquivo0Header(LINHA_TESTE_VALIDA.substring(0, 240));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
     public void erroAoConstruirComTipoIncorreto() {
         new Arquivo0Header(LINHA_TESTE_INVALIDA_TIPO);
     }
