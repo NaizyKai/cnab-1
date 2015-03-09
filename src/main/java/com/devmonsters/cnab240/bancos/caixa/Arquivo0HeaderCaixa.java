@@ -11,15 +11,18 @@ public class Arquivo0HeaderCaixa extends Arquivo0Header {
     private String campo02ControleLote;
     private String campo03ControleRegistro;
     private String campo04Reservado1;
+
     private String campo05EmpresaInscricaoTipo;
     private String campo06EmpresaInscricaoNumero;
-    private String campo07EmpresaConvenio;
-    private String campo08EmpresaContaCorrenteAgenciaCodigo;
-    private String campo09EmpresaContaCorrenteAgenciaDV;
-    private String campo10EmpresaContaCorrenteContaNumero;
-    private String campo11EmpresaContaCorrenteContaDV;
-    private String campo12EmpresaContaCorrenteDV;
+    private String campo07UsoExclusivo;
+
+    private String campo08EmpresaIdentificadorAgenciacodigo;
+    private String campo09EmpresaIdentificadorAgenciaDV;
+    private String campo10EmpresaIdentificadorCodigoCedente;
+    private String campo11EmpresaUsoExclusivo;
+    private String campo12EmpresaUsoExclusivo;
     private String campo13EmpresaNome;
+
     private String campo14NomeBanco;
     private String campo15Reservado2;
     private String campo16ArquivoCodigo;
@@ -30,7 +33,8 @@ public class Arquivo0HeaderCaixa extends Arquivo0Header {
     private String campo21ArquivoDensidade;
     private String campo22ReservadoBanco;
     private String campo23ReservadoEmpresa;
-    private String campo24Reservado3;
+    private String campo24VersaoAplicativo;
+    private String campo25Reservado3;
 
     public Arquivo0HeaderCaixa(String linha) {
         super(linha);
@@ -38,15 +42,18 @@ public class Arquivo0HeaderCaixa extends Arquivo0Header {
         this.campo02ControleLote = linha.substring(4, 8);
         this.campo03ControleRegistro = linha.substring(8, 9);
         this.campo04Reservado1 = linha.substring(9, 18);
+
         this.campo05EmpresaInscricaoTipo = linha.substring(18, 19);
         this.campo06EmpresaInscricaoNumero = linha.substring(19, 33);
-        this.campo07EmpresaConvenio = linha.substring(33, 53);
-        this.campo08EmpresaContaCorrenteAgenciaCodigo = linha.substring(53, 58);
-        this.campo09EmpresaContaCorrenteAgenciaDV = linha.substring(58, 59);
-        this.campo10EmpresaContaCorrenteContaNumero = linha.substring(59, 71);
-        this.campo11EmpresaContaCorrenteContaDV = linha.substring(71, 72);
-        this.campo12EmpresaContaCorrenteDV = linha.substring(72, 73);
+        this.campo07UsoExclusivo = linha.substring(33, 53);
+
+        this.campo08EmpresaIdentificadorAgenciacodigo = linha.substring(53, 58);
+        this.campo09EmpresaIdentificadorAgenciaDV = linha.substring(58, 59);
+        this.campo10EmpresaIdentificadorCodigoCedente = linha.substring(59, 65);
+        this.campo11EmpresaUsoExclusivo = linha.substring(65, 72);
+        this.campo12EmpresaUsoExclusivo = linha.substring(72, 73);
         this.campo13EmpresaNome = linha.substring(73, 103);
+
         this.campo14NomeBanco = linha.substring(103, 133);
         this.campo15Reservado2 = linha.substring(133, 143);
         this.campo16ArquivoCodigo = linha.substring(143, 144);
@@ -55,9 +62,11 @@ public class Arquivo0HeaderCaixa extends Arquivo0Header {
         this.campo19ArquivoSequencia = linha.substring(158, 164);
         this.campo20ArquivoLayout = linha.substring(164, 167);
         this.campo21ArquivoDensidade = linha.substring(167, 172);
+
         this.campo22ReservadoBanco = linha.substring(172, 192);
         this.campo23ReservadoEmpresa = linha.substring(192, 212);
-        this.campo24Reservado3 = linha.substring(212, 241);
+        this.campo24VersaoAplicativo = linha.substring(212, 216);
+        this.campo25Reservado3 = linha.substring(216, 241);
     }
 
     public String getCampo01ControleBanco() {
@@ -108,52 +117,52 @@ public class Arquivo0HeaderCaixa extends Arquivo0Header {
         this.campo06EmpresaInscricaoNumero = campo06EmpresaInscricaoNumero;
     }
 
-    public String getCampo07EmpresaConvenio() {
-        return campo07EmpresaConvenio;
+    public String getCampo07UsoExclusivo() {
+        return campo07UsoExclusivo;
     }
 
-    public void setCampo07EmpresaConvenio(String campo07EmpresaConvenio) {
-        this.campo07EmpresaConvenio = campo07EmpresaConvenio;
+    public void setCampo07UsoExclusivo(String campo07UsoExclusivo) {
+        this.campo07UsoExclusivo = campo07UsoExclusivo;
     }
 
-    public String getCampo08EmpresaContaCorrenteAgenciaCodigo() {
-        return campo08EmpresaContaCorrenteAgenciaCodigo;
+    public String getCampo08EmpresaIdentificadorAgenciacodigo() {
+        return campo08EmpresaIdentificadorAgenciacodigo;
     }
 
-    public void setCampo08EmpresaContaCorrenteAgenciaCodigo(String campo08EmpresaContaCorrenteAgenciaCodigo) {
-        this.campo08EmpresaContaCorrenteAgenciaCodigo = campo08EmpresaContaCorrenteAgenciaCodigo;
+    public void setCampo08EmpresaIdentificadorAgenciacodigo(String campo08EmpresaIdentificadorAgenciacodigo) {
+        this.campo08EmpresaIdentificadorAgenciacodigo = campo08EmpresaIdentificadorAgenciacodigo;
     }
 
-    public String getCampo09EmpresaContaCorrenteAgenciaDV() {
-        return campo09EmpresaContaCorrenteAgenciaDV;
+    public String getCampo09EmpresaIdentificadorAgenciaDV() {
+        return campo09EmpresaIdentificadorAgenciaDV;
     }
 
-    public void setCampo09EmpresaContaCorrenteAgenciaDV(String campo09EmpresaContaCorrenteAgenciaDV) {
-        this.campo09EmpresaContaCorrenteAgenciaDV = campo09EmpresaContaCorrenteAgenciaDV;
+    public void setCampo09EmpresaIdentificadorAgenciaDV(String campo09EmpresaIdentificadorAgenciaDV) {
+        this.campo09EmpresaIdentificadorAgenciaDV = campo09EmpresaIdentificadorAgenciaDV;
     }
 
-    public String getCampo10EmpresaContaCorrenteContaNumero() {
-        return campo10EmpresaContaCorrenteContaNumero;
+    public String getCampo10EmpresaIdentificadorCodigoCedente() {
+        return campo10EmpresaIdentificadorCodigoCedente;
     }
 
-    public void setCampo10EmpresaContaCorrenteContaNumero(String campo10EmpresaContaCorrenteContaNumero) {
-        this.campo10EmpresaContaCorrenteContaNumero = campo10EmpresaContaCorrenteContaNumero;
+    public void setCampo10EmpresaIdentificadorCodigoCedente(String campo10EmpresaIdentificadorCodigoCedente) {
+        this.campo10EmpresaIdentificadorCodigoCedente = campo10EmpresaIdentificadorCodigoCedente;
     }
 
-    public String getCampo11EmpresaContaCorrenteContaDV() {
-        return campo11EmpresaContaCorrenteContaDV;
+    public String getCampo11EmpresaUsoExclusivo() {
+        return campo11EmpresaUsoExclusivo;
     }
 
-    public void setCampo11EmpresaContaCorrenteContaDV(String campo11EmpresaContaCorrenteContaDV) {
-        this.campo11EmpresaContaCorrenteContaDV = campo11EmpresaContaCorrenteContaDV;
+    public void setCampo11EmpresaUsoExclusivo(String campo11EmpresaUsoExclusivo) {
+        this.campo11EmpresaUsoExclusivo = campo11EmpresaUsoExclusivo;
     }
 
-    public String getCampo12EmpresaContaCorrenteDV() {
-        return campo12EmpresaContaCorrenteDV;
+    public String getCampo12EmpresaUsoExclusivo() {
+        return campo12EmpresaUsoExclusivo;
     }
 
-    public void setCampo12EmpresaContaCorrenteDV(String campo12EmpresaContaCorrenteDV) {
-        this.campo12EmpresaContaCorrenteDV = campo12EmpresaContaCorrenteDV;
+    public void setCampo12EmpresaUsoExclusivo(String campo12EmpresaUsoExclusivo) {
+        this.campo12EmpresaUsoExclusivo = campo12EmpresaUsoExclusivo;
     }
 
     public String getCampo13EmpresaNome() {
@@ -244,12 +253,20 @@ public class Arquivo0HeaderCaixa extends Arquivo0Header {
         this.campo23ReservadoEmpresa = campo23ReservadoEmpresa;
     }
 
-    public String getCampo24Reservado3() {
-        return campo24Reservado3;
+    public String getCampo24VersaoAplicativo() {
+        return campo24VersaoAplicativo;
     }
 
-    public void setCampo24Reservado3(String campo24Reservado3) {
-        this.campo24Reservado3 = campo24Reservado3;
+    public void setCampo24VersaoAplicativo(String campo24VersaoAplicativo) {
+        this.campo24VersaoAplicativo = campo24VersaoAplicativo;
+    }
+
+    public String getCampo25Reservado3() {
+        return campo25Reservado3;
+    }
+
+    public void setCampo25Reservado3(String campo25Reservado3) {
+        this.campo25Reservado3 = campo25Reservado3;
     }
 
     @Override
@@ -261,12 +278,12 @@ public class Arquivo0HeaderCaixa extends Arquivo0Header {
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo04Reservado1), 9, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo05EmpresaInscricaoTipo), 1, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_NUMERICO));
         linha.append(Strings.isNullOrEmpty(this.campo06EmpresaInscricaoNumero) ? "00000000000000" : Strings.padStart(this.campo06EmpresaInscricaoNumero, 14, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_NUMERICO));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo07EmpresaConvenio), 20, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo08EmpresaContaCorrenteAgenciaCodigo), 5, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_NUMERICO));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo09EmpresaContaCorrenteAgenciaDV), 1, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo10EmpresaContaCorrenteContaNumero), 12, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_NUMERICO));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo11EmpresaContaCorrenteContaDV), 1, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo12EmpresaContaCorrenteDV), 1, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo07UsoExclusivo), 20, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo08EmpresaIdentificadorAgenciacodigo), 5, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_NUMERICO));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo09EmpresaIdentificadorAgenciaDV), 1, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo10EmpresaIdentificadorCodigoCedente), 6, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_NUMERICO));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo11EmpresaUsoExclusivo), 7, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo12EmpresaUsoExclusivo), 1, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo13EmpresaNome), 30, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo14NomeBanco), 30, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo15Reservado2), 10, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
@@ -278,7 +295,8 @@ public class Arquivo0HeaderCaixa extends Arquivo0Header {
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo21ArquivoDensidade), 5, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_NUMERICO));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo22ReservadoBanco), 20, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo23ReservadoEmpresa), 20, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo24Reservado3), 29, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo24VersaoAplicativo), 4, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo25Reservado3), 25, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
         return linha.toString();
     }
 }

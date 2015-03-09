@@ -33,8 +33,8 @@ public class Arquivo9TrailerCaixaTest {
         Assert.assertEquals("ddddddddd", trailer.getCampo04Reservado1());
         Assert.assertEquals("eeeeee", trailer.getCampo05TotaisQuantidadeLotes());
         Assert.assertEquals("ffffff", trailer.getCampo06TotaisQuantidadeRegistros());
-        Assert.assertEquals("gggggg", trailer.getCampo07TotaisQuantidadeContasConciliacao());
-        Assert.assertEquals("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", trailer.getCampo08Reservado2());
+        Assert.assertEquals("gggggg", trailer.getCampo07Reservado2());
+        Assert.assertEquals("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", trailer.getCampo08Reservado3());
     }
 
     @Test

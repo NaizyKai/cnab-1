@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class Arquivo0HeaderCaixaTest {
 
-    private final String LINHA_TESTE_VALIDA = "0aaabbbbcdddddddddeffffffffffffffgggggggggggggggggggghhhhhijjjjjjjjjjjjklmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnoooooooooopqqqqqqqqrrrrrrsssssstttuuuuuvvvvvvvvvvvvvvvvvvvvxxxxxxxxxxxxxxxxxxxxyyyyyyyyyyyyyyyyyyyyyyyyyyyyy";
+    private final String LINHA_TESTE_VALIDA = "0aaabbbbcdddddddddeffffffffffffffgggggggggggggggggggghhhhhijjjjjjkkkkkkklmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnoooooooooopqqqqqqqqrrrrrrsssssstttuuuuuvvvvvvvvvvvvvvvvvvvvxxxxxxxxxxxxxxxxxxxxyyyyzzzzzzzzzzzzzzzzzzzzzzzzz";
     private final String LINHA_TESTE_INVALIDA_TIPO = LINHA_TESTE_VALIDA.replace("0", "1");
 
     @Test(expected = IllegalArgumentException.class)
@@ -33,12 +33,12 @@ public class Arquivo0HeaderCaixaTest {
         Assert.assertEquals("ddddddddd", header.getCampo04Reservado1());
         Assert.assertEquals("e", header.getCampo05EmpresaInscricaoTipo());
         Assert.assertEquals("ffffffffffffff", header.getCampo06EmpresaInscricaoNumero());
-        Assert.assertEquals("gggggggggggggggggggg", header.getCampo07EmpresaConvenio());
-        Assert.assertEquals("hhhhh", header.getCampo08EmpresaContaCorrenteAgenciaCodigo());
-        Assert.assertEquals("i", header.getCampo09EmpresaContaCorrenteAgenciaDV());
-        Assert.assertEquals("jjjjjjjjjjjj", header.getCampo10EmpresaContaCorrenteContaNumero());
-        Assert.assertEquals("k", header.getCampo11EmpresaContaCorrenteContaDV());
-        Assert.assertEquals("l", header.getCampo12EmpresaContaCorrenteDV());
+        Assert.assertEquals("gggggggggggggggggggg", header.getCampo07UsoExclusivo());
+        Assert.assertEquals("hhhhh", header.getCampo08EmpresaIdentificadorAgenciacodigo());
+        Assert.assertEquals("i", header.getCampo09EmpresaIdentificadorAgenciaDV());
+        Assert.assertEquals("jjjjjj", header.getCampo10EmpresaIdentificadorCodigoCedente());
+        Assert.assertEquals("kkkkkkk", header.getCampo11EmpresaUsoExclusivo());
+        Assert.assertEquals("l", header.getCampo12EmpresaUsoExclusivo());
         Assert.assertEquals("mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm", header.getCampo13EmpresaNome());
         Assert.assertEquals("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnn", header.getCampo14NomeBanco());
         Assert.assertEquals("oooooooooo", header.getCampo15Reservado2());
@@ -50,7 +50,8 @@ public class Arquivo0HeaderCaixaTest {
         Assert.assertEquals("uuuuu", header.getCampo21ArquivoDensidade());
         Assert.assertEquals("vvvvvvvvvvvvvvvvvvvv", header.getCampo22ReservadoBanco());
         Assert.assertEquals("xxxxxxxxxxxxxxxxxxxx", header.getCampo23ReservadoEmpresa());
-        Assert.assertEquals("yyyyyyyyyyyyyyyyyyyyyyyyyyyyy", header.getCampo24Reservado3());
+        Assert.assertEquals("yyyy", header.getCampo24VersaoAplicativo());
+        Assert.assertEquals("zzzzzzzzzzzzzzzzzzzzzzzzz", header.getCampo25Reservado3());
     }
 
     @Test

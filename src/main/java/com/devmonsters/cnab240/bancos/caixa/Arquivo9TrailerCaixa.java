@@ -13,8 +13,8 @@ public class Arquivo9TrailerCaixa extends Arquivo9Trailer {
     private String campo04Reservado1;
     private String campo05TotaisQuantidadeLotes;
     private String campo06TotaisQuantidadeRegistros;
-    private String campo07TotaisQuantidadeContasConciliacao;
-    private String campo08Reservado2;
+    private String campo07Reservado2;
+    private String campo08Reservado3;
 
     public Arquivo9TrailerCaixa(String linha) {
         super(linha);
@@ -24,8 +24,8 @@ public class Arquivo9TrailerCaixa extends Arquivo9Trailer {
         this.campo04Reservado1 = linha.substring(9, 18);
         this.campo05TotaisQuantidadeLotes = linha.substring(18, 24);
         this.campo06TotaisQuantidadeRegistros = linha.substring(24, 30);
-        this.campo07TotaisQuantidadeContasConciliacao = linha.substring(30, 36);
-        this.campo08Reservado2 = linha.substring(36, 241);
+        this.campo07Reservado2 = linha.substring(30, 36);
+        this.campo08Reservado3 = linha.substring(36, 241);
     }
 
     public String getCampo01ControleBanco() {
@@ -76,20 +76,20 @@ public class Arquivo9TrailerCaixa extends Arquivo9Trailer {
         this.campo06TotaisQuantidadeRegistros = campo06TotaisQuantidadeRegistros;
     }
 
-    public String getCampo07TotaisQuantidadeContasConciliacao() {
-        return campo07TotaisQuantidadeContasConciliacao;
+    public String getCampo07Reservado2() {
+        return campo07Reservado2;
     }
 
-    public void setCampo07TotaisQuantidadeContasConciliacao(String campo07TotaisQuantidadeContasConciliacao) {
-        this.campo07TotaisQuantidadeContasConciliacao = campo07TotaisQuantidadeContasConciliacao;
+    public void setCampo07Reservado2(String campo07Reservado2) {
+        this.campo07Reservado2 = campo07Reservado2;
     }
 
-    public String getCampo08Reservado2() {
-        return campo08Reservado2;
+    public String getCampo08Reservado3() {
+        return campo08Reservado3;
     }
 
-    public void setCampo08Reservado2(String campo08Reservado2) {
-        this.campo08Reservado2 = campo08Reservado2;
+    public void setCampo08Reservado3(String campo08Reservado3) {
+        this.campo08Reservado3 = campo08Reservado3;
     }
 
     @Override
@@ -101,8 +101,8 @@ public class Arquivo9TrailerCaixa extends Arquivo9Trailer {
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo04Reservado1), 9, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo05TotaisQuantidadeLotes), 6, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_NUMERICO));
         linha.append(Strings.padStart(Strings.nullToEmpty(this.campo06TotaisQuantidadeRegistros), 6, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_NUMERICO));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo07TotaisQuantidadeContasConciliacao), 6, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_NUMERICO));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo08Reservado2), 205, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo07Reservado2), 6, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_NUMERICO));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo08Reservado3), 205, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
         return linha.toString();
     }
 }
