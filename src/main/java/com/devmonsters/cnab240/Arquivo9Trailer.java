@@ -98,14 +98,14 @@ public class Arquivo9Trailer extends ArquivoLinha {
     @Override
     String getLinha() {
         final StringBuilder linha = new StringBuilder(String.valueOf(this.getTipo()));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo01ControleBanco), 3, '0'));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo02ControleLote), 4, '0'));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo03ControleRegistro), 1, '0'));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo04Reservado1), 9, ' '));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo05TotaisQuantidadeLotes), 6, '0'));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo06TotaisQuantidadeRegistros), 6, '0'));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo07TotaisQuantidadeContasConciliacao), 6, '0'));
-        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo08Reservado2), 205, ' '));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo01ControleBanco), 3, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_NUMERICO));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo02ControleLote), 4, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_NUMERICO));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo03ControleRegistro), 1, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_NUMERICO));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo04Reservado1), 9, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo05TotaisQuantidadeLotes), 6, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_NUMERICO));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo06TotaisQuantidadeRegistros), 6, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_NUMERICO));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo07TotaisQuantidadeContasConciliacao), 6, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_NUMERICO));
+        linha.append(Strings.padStart(Strings.nullToEmpty(this.campo08Reservado2), 205, Arquivo.ARQUIVO_CAMPO_PREENCHIMENTO_ALFA));
         return linha.toString();
     }
 }

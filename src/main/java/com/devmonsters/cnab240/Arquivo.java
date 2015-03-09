@@ -8,6 +8,8 @@ public class Arquivo implements Serializable {
     private static final long serialVersionUID = -7482405864830800313L;
     public static final String ARQUIVO_VERSAO = "09";
     public static final String ARQUIVO_RELEASE = "0";
+    public static final char ARQUIVO_CAMPO_PREENCHIMENTO_ALFA = ' ';
+    public static final char ARQUIVO_CAMPO_PREENCHIMENTO_NUMERICO = '0';
 
     private Arquivo0Header header;
     private List<ArquivoLote> lotes;
